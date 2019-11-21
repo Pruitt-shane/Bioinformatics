@@ -1,8 +1,9 @@
-## Welcome to GitHub Pages
+# Shanes Bioinformatics Website
 
-You can use the [editor on GitHub](https://github.com/Pruitt-shane/Bioinformatics/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## Where I'm From 
+![Florida](https://www.google.com/search?biw=1920&bih=1001&tbm=isch&sa=1&ei=j9TWXY7CIcHj_Ab_66vICg&q=florida+map+&oq=florida+map+&gs_l=img.3..0i131j0l9.123027.124304..124657...0.0..0.93.659.12......0....1..gws-wiz-img.......0i67.YH9S-4WcRRI&ved=0ahUKEwjOxa3n9PvlAhXBMd8KHf_1CqkQ4dUDCAc&uact=5#imgrc=kvGo4tNWK0fDAM:)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+
 
 ### Markdown
 
@@ -24,14 +25,7 @@ Syntax highlighted code block
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
-```
+``
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Pruitt-shane/Bioinformatics/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
