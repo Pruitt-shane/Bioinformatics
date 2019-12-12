@@ -23,7 +23,7 @@ A directory structure is a heirarchy of files, that give a pathway to your file 
 Sanger sequencing "creates" a sequence by sequencing one small piece of the "puzzle" at a time. While NGS may be able to decipher the most/large portions of the "puzzle" at a time. NGS is much more efficient, is cheaper, and may detect varients more efficiently than the Sanger method. 
 
 
-3. What is the difference between the two pipelines, hp01 and hp02? Explain what each step of the pipelines accomplishes and why that step is necessary.
+3. What is the difference between the two pipelines, hp01 and hp02? Explain what each step of the pipelines accomplishes and why that step is necessary. It seems that hp01 doesn't have to go through the correction stage because the denovo assembly does that during its process, and then the contigs are oriented to the amplicon reference. hp02 goes through the same first step, but because it does not go through denovo assembly, it goes through a correction phase. After these steps are done, both pipelines go through the same steps/commands. 
 
 - hp_assemble_01
 
@@ -78,11 +78,13 @@ Please explain what the haphpipe suite is. What is it's purpose how do you use i
 For each of the stages below, please explain the stage. List the files needed for the command, what the command does. The options for the command. An example of how to execute the command.
 
 ### hp_reads
+Seqtk is a fast and lightweight tool for processing sequences in the FASTA or FASTQ format. It seamlessly parses both FASTA and FASTQ files which can also be optionally compressed 
         sample_reads
         trim_reads
         join_reads
         ec_reads
 ### hp_assemble
+"The denovo assembly stage automatically performs error detection, but trimmed reads are also error corrected". To me, this are programs that take the trimmed reads and clean them up in a way that they can be compiled together into a readable piece. 
         assemble_denovo
         assemble_amplicons
         assemble_scaffold
@@ -104,10 +106,10 @@ Your virus with both pipelines. Document all code and explanation.
 
 ## Helpful resources
 List all helpful topics you think or did address here with links / explainations you felt were helpful. Use bullet points.
-
+To be honest, I needed all of these references because I had zero experience with any of these. 
 - introduction to NGS
 	- https://learn.gencore.bio.nyu.edu/variant-calling/
-- inroduction to bash
+- inroduction to bash from Github
 - intro to github
 	- https://github.com/gwcbi/HPC/blob/master/github.md
 - markdown tutorial
@@ -119,3 +121,5 @@ List all helpful topics you think or did address here with links / explainations
 	
 ## FAQ
 List all questions you had and provide links / explainations you felt were helpful to answer these questions. Use topics and numbering.
+I was always taught to bring explanations down to the very basic level, and then bring them up as you go in order to prevent any confusion. Athough I dont usually use sites like Quora to me this quora question is a good example of a very simple, easy explanation that can be foundational to learning more. Even if the topic is not very complex, I've always found "explaining it like I'm 5" to be a good way to start. 
+[Quora Answer](https://www.quora.com/What-are-pipelines-in-Bioinformatics)
