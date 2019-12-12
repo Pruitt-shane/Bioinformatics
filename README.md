@@ -34,19 +34,44 @@ Sanger sequencing "creates" a sequence by sequencing one small piece of the "puz
 - hp_assemble_02  
 >This pipeline implements reference-based mapping assembly. Reads are first trimmed (trim_reads) and error-corrected (ec_reads). The corrected reads are used as input for reference-based mapping assembly (refine_assembly) for up to five iterations. Lastly, the assembly is finalized (finalize_assembly) by mapping reads onto the refined reference sequence. The final output is a FASTA file with final consensus sequences, final VCF, and aligned BAM file.
 
-4. Did you need to learn how to bash script for this? What do you feel like you weren't prepared for after reading the introduction part we provided you with?
+4. Did you need to learn how to bash script for this? What do you feel like you weren't prepared for after reading the introduction part we provided you with? Yes I needed to learn how to bash script for this. I had previously had no experience whatsoever in using a command line, scripting, or anything of that nature. After going through the material I was able to gain a better understanding of what was going on, but I defenitely needed the help of someone more experienced to get me through the process. For me some of the stuff was literally "bashing" at the keyboard, experimenting to see if it worked or not. It probably took a good amount of time more to figure it out than my counterpart Freddie. 
 
 
 
 ## Installing HAPHPIPE
+These are some of the suite of tools that haphpipe utilizes. Inserting these commands into the terminal "tells" the computer that when running haphpipe, it will be always utilizing these tools, somewhat like installing a program. All of these lines perform a certain function, and by creating an environement it packages all of these functions together. This is more efficient so that you dont need to run each command over and over again when analyzing data. 
 
-Insert instructions in your own words and code.
 
+conda create -n haphpipe/
+ python \
+ future \
+ pyyaml \
+ biopython \
+ seqtk \
+ bowtie2 \
+ bwa \
+ flash \
+ freebayes \
+ mummer \
+ picard \
+ trimmomatic \
+ samtools=1.9 \
+ gatk=3.8 \
+ spades \
+ blast \
+ sierrapy
+ 
 ## Activating HAPHPIPE
+Input the code below into your terminal. This will tell the conda that you want to activate the program Haphpipe. 
 
-Insert how you activate HAPHPIPE and use it in your own words and code.
+	conda activate haphpipe
+	
+While trying to register the Gatk file, I kept getting the error "Error: Unable to access jarfile ./GenomeAnalysisTK.jar
+The version of the jar specified, , does not match the version expected by conda: 3.8". This was because someone else had already downloaded it on the computer a couple years ago. 
+this was fixed by changing the directory to downloads and putting the path to the original file download. 
 
-
+	gatk3-register /User/crandalllab/Downloads/GenomeAnalysisTK-3.8-0-ge9d806836.tar.bz2
+	
 ## HAPHPIPE suite
 Please explain what the haphpipe suite is. What is it's purpose how do you use it? What is it good for?
 
