@@ -102,7 +102,7 @@ Seqtk is a fast and lightweight tool for processing sequences in the FASTA or FA
         annotate_from_ref
         
 ## Example usage
-
+### I pasted this in here because for me reading these steps actually gave me insight on what was going on. What I did was open the wiki on one half of the screen and then had these steps on the other, and slowly worked my way down to try and figure out what was going on. 
 ### Stages
 Each stage can be run on its own. Stages are grouped into 4 categories: hp_reads, hp_assemble, hp_haplotype, and hp_annotate.
 
