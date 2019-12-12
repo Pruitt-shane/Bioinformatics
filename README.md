@@ -9,9 +9,7 @@
 *My links are:*
 
 *Associated paper pararaphs.*
-*Paragraph about study:*
-
-*Paragraph abut NGS technique and data:*
+The authors are claiming that although NGS may detect more low frequency variants, this may not be useful in standard care. They claim that there was already 90% viral suppression rate in cities like Seattle, so sanger sequencing was already working at a very effective rate in the absence of NGS. According to the study, both tests were equally able to detect high frequency variants.PASeq and HyDRA were just as good at detecting high frequency DRMS as sanger sequencing was, showing their potential worth in analysis pipelines. They claim that although better at detecting low frequency variations, NGS doesn't provide much more utility in the workplace than what is already put into place with Sanger sequencing. They do however note that further studies are needed in areas that have not achieved the 90% threshold. 
 
 ## Questions
 
