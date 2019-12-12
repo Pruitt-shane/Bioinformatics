@@ -399,9 +399,7 @@ haphpipe pairwise_align --amplicons_fa final.fna --ref_fa refSequence.fasta --re
 
 Extract sequence regions from the pairwise alignment produced in __pairwise_align__. Input is the JSON file from __pairwise_align__. Output is either an unaligned nucleotide FASTA file, an aligned nucleotide FASTA file, an amino acid FASTA file, an amplicon GTF file, or a tab-separated values (TSV) file (default: nucleotide FASTA with regions of interest from GTF file used in __pairwise_align__).
 
-Example to execute:
 
-```
 
 
 ## Helpful resources
