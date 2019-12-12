@@ -419,5 +419,6 @@ To be honest, I needed all of these references because I had zero experience wit
 	
 ## FAQ
 List all questions you had and provide links / explainations you felt were helpful to answer these questions. Use topics and numbering.
-I was always taught to bring explanations down to the very basic level, and then bring them up as you go in order to prevent any confusion. Athough I dont usually use sites like Quora to me this quora question is a good example of a very simple, easy explanation that can be foundational to learning more. Even if the topic is not very complex, I've always found "explaining it like I'm 5" to be a good way to start. 
+
+I was always taught to bring explanations down to the very basic level, and then bring them up as you go in order to prevent any confusion. Athough I dont usually use sites like Quora to me this quora question is a good example of a very simple, easy explanation that can be foundational to learning more. Even if the topic is not very complex, I've always found "explaining it like I'm 5" to be a good way to start. This was a a good resource for me on day 1. 
 [Quora Answer](https://www.quora.com/What-are-pipelines-in-Bioinformatics)
