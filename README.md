@@ -73,7 +73,7 @@ this was fixed by changing the directory to downloads and putting the path to th
 ## HAPHPIPE suite
 Please explain what the haphpipe suite is. What is it's purpose how do you use it? What is it good for?
 
-To me a pipeline is a sequence of commands that perform certain tasks in the order that you give it to them, for the purpose of analyzing data. Conda packages these programs for you into one simpler command so that it's more efficient. The haphpipe suite to me is a set of commands put into a specific order for the purpose of analyzing sequences. 
+To me a pipeline is a sequence of commands that perform certain tasks in the order that you give it to them, for the purpose of analyzing data. Conda packages these programs for you into one simpler command so that it's more efficient. The haphpipe suite to me is a set of commands put into a specific order for the purpose of analyzing sequences, creating a package of commands that streamline what would otherwise be a tedious process. 
 
 ### hp_reads
 Seqtk is a fast and lightweight tool for processing sequences in the FASTA or FASTQ format. It seamlessly parses both FASTA and FASTQ files which can also be optionally compressed 
@@ -123,7 +123,7 @@ haphpipe -h
 
   
 
-Stages to manipulate reads and perform quality control. Input is reads in FASTQ format, output is modified reads in FASTQ format.
+Stages to manipulate reads and perform quality control. Input is reads in FASTQ format, output is modified reads in FASTQ format. This to me states that this program is looking for "anomolies" or formatting issues that shouldnt normally be present. 
 
   
 
@@ -147,7 +147,7 @@ haphpipe sample_reads --fq1 read_1.fastq --fq2 read_2.fastq --nreads 1000 --seed
 
   
 
-Trim reads using Trimmomatic ([documentation](http://www.usadellab.org/cms/?page=trimmomatic)). Input is reads in FASTQ format. Output is trimmed reads in FASTQ format.
+Trim reads using Trimmomatic ([documentation](http://www.usadellab.org/cms/?page=trimmomatic)). Input is reads in FASTQ format. Output is trimmed reads in FASTQ format. As the documentation states this just cleans up the data in a way that makes it more manageable for analysis. If the reads are found to be below a certain quality threshold, then they will be trimmed. It allows for a better quality sequence. 
 
 Example to execute:
 
@@ -163,7 +163,7 @@ haphpipe trim_reads --fq1 read_1.fastq --fq2 read_2.fastq
 
   
 
-Join reads using FLASH ([paper](https://www.ncbi.nlm.nih.gov/pubmed/21903629)). Input is reads in FASTQ format. Output is joined reads in FASTQ format.
+Join reads using FLASH ([paper](https://www.ncbi.nlm.nih.gov/pubmed/21903629)). Input is reads in FASTQ format. Output is joined reads in FASTQ format. For denovo assembly, it can cause problems if there is a large amount of short sequence reads. Joining the reads is a process that will overlap the short reads so that they can be in a long read that better accomodates the assembly programs. As the paper states it has an incredibly high success rate with a very low margin of error, meaning that the joined reads are very accurate. 
 
 Example to execute:
 
@@ -179,7 +179,7 @@ haphpipe join_reads --fq1 trimmed_1.fastq --fq2 trimmed_2.fastq
 
   
 
-Error correction using SPAdes ([documentation](http://cab.spbu.ru/software/spades/)). Input is reads in FASTQ format. Output is error-corrected reads in FASTQ format.
+Error correction using SPAdes ([documentation](http://cab.spbu.ru/software/spades/)). Input is reads in FASTQ format. Output is error-corrected reads in FASTQ format. For me the documentation provided didn't really help with figuring out what SPAdes does. I also searched on google, but for the purposes of this user guide, there was nothing there that explained things at a basic level that I could find. 
 
 Example to execute:
 
@@ -201,6 +201,7 @@ using either denovo assembly or reference-based alignment.
 
 Resulting consensus can be further refined.
 
+Since this is also utilizing SPAdes, my input from the previous section is repeated here. I would provide maybe a personalized explanation that is simpler (if the target audience is not experienced with computers such as myself). 
   
 
 ##### assemble_denovo
@@ -221,7 +222,7 @@ haphpipe assemble_denovo --fq1 corrected_1.fastq --fq2 corrected_2.fastq --outdi
 
   
 
-Assemble contigs from de novo assembly using both a reference sequence and amplicon regions with MUMMER 3+ ([documentation](http://mummer.sourceforge.net/manual/)). Input is contigs and reference sequence in FASTA format and amplicon regions in GTF format.
+Assemble contigs from de novo assembly using both a reference sequence and amplicon regions with MUMMER 3+ ([documentation](http://mummer.sourceforge.net/manual/)). Input is contigs and reference sequence in FASTA format and amplicon regions in GTF format. The documentation provided here is quite useful in understanding what the function is. It allows for quick assembly for large amounts of DNA or amino acid sequences. 
 
 Example to execute:
 
@@ -237,7 +238,7 @@ haphpipe assemble_amplicons --contigs_fa denovo_contigs.fa --ref_fa refSequence.
 
   
 
-Scaffold contigs against a reference sequence with MUMMER 3+ ([documentation](http://mummer.sourceforge.net/manual/)). Input is contigs in FASTA format and reference sequence in FASTA format. Output is scaffold assembly, alligned scaffold, imputed scaffold, and padded scaffold in FASTA format.
+Scaffold contigs against a reference sequence with MUMMER 3+ ([documentation](http://mummer.sourceforge.net/manual/)). Input is contigs in FASTA format and reference sequence in FASTA format. Output is scaffold assembly, alligned scaffold, imputed scaffold, and padded scaffold in FASTA format. Since this section also uses MUMMER 3+ I would repeat what I said last section.
 
 Example to execute:
 
@@ -253,7 +254,7 @@ haphpipe assemble_scaffold --contigs_fa denovo_contigs.fa --ref_fa refSequence.f
 
   
 
-Map reads to reference sequence (instead of running de novo assembly) using Bowtie2 ([documentation](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)) and Picard ([documentation](https://broadinstitute.github.io/picard/)). Input is reads in FASTQ format and reference sequence in FASTA format.
+Map reads to reference sequence (instead of running de novo assembly) using Bowtie2 ([documentation](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)) and Picard ([documentation](https://broadinstitute.github.io/picard/)). Input is reads in FASTQ format and reference sequence in FASTA format. Bowtie2 is an aligning tool that references the data provided by the user to long reference sequences. While Picard is a command line tool that helps you manipulate HTS data (basically that means that you can sequence several different DNA sequences at the same time, meaning that you can sequence large amounts of data concurrently)
 
 Example to execute:
 
@@ -269,7 +270,7 @@ haphpipe align_reads --fq1 corrected_1.fastq --fq2 corrected _2.fastq --ref_fa r
 
   
 
-Variant calling from alignment using GATK ([documentation](https://software.broadinstitute.org/gatk/download/archive)). Input is alignment file in BAM format and reference sequence in FASTA format (either reference from reference-based assembly or consensus final sequence from de novo assembly). Output is a Variant Call File (VCF) format file.
+Variant calling from alignment using GATK ([documentation](https://software.broadinstitute.org/gatk/download/archive)). Input is alignment file in BAM format and reference sequence in FASTA format (either reference from reference-based assembly or consensus final sequence from de novo assembly). Output is a Variant Call File (VCF) format file. At the GATk website there is a very nice user guide that covers almost anything youd like to know about the program. This is also a set of command line tools that allow for manipulation of HTS, just like the previous program. 
 
 Example to execute:
 
@@ -420,3 +421,5 @@ List all questions you had and provide links / explainations you felt were helpf
 
 I was always taught to bring explanations down to the very basic level, and then bring them up as you go in order to prevent any confusion. Athough I dont usually use sites like Quora to me this quora question is a good example of a very simple, easy explanation that can be foundational to learning more. Even if the topic is not very complex, I've always found "explaining it like I'm 5" to be a good way to start. This was a a good resource for me on day 1. 
 [Quora Answer](https://www.quora.com/What-are-pipelines-in-Bioinformatics)
+
+My experience with programs/pipelines like this was previously little to none. When I first started I had to look up what a pipeline even was. It was a process that just took time to learn what was going on. Once you understand the basic principle, it makes it much easier to get the hang of whats going on. My groupmate Freddie is CS master student, and luckily he showed me running through his data, and analyzing it so I was able to get a better understanding of what was going on. Although the guides were somewhat helpful, I wasn't very acquainted with bashing, command lines, etc. Going through the process with Freddie to me was much more helpful. 
