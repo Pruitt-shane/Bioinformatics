@@ -413,8 +413,9 @@ To be honest, I needed all of these references because I had zero experience wit
 	- https://www.markdowntutorial.com
 - tips for command line
 	- https://github.com/gwcbi/HPC/blob/master/commandline.md
-- how to run interactive jobs *(do this for all haphpipe modules and pipelines!)*
+- how to run interactive jobs 
 	- https://github.com/gwcbi/HPC/blob/master/interactive_jobs.md
+-HyDRA's website has a really nice example of what a user friendly user manual might look like. Although it still assumes that you are pretty knowledeable about computers, I think it might be a good place to start. [HyDRA's Website](https://github.com/Findwise/Hydra)
 	
 ## FAQ
 List all questions you had and provide links / explainations you felt were helpful to answer these questions. Use topics and numbering.
